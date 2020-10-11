@@ -1,0 +1,16 @@
+app:
+  endpoint:
+    version: v1
+server:
+  port: 10098
+  servlet:
+    context-path: /prueba-wolox
+
+spring:
+  main:
+    lazy-initialization: false
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+      enabled: true
