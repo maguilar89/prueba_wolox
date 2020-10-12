@@ -17,7 +17,7 @@ import java.util.Map;
 
 @Configuration
 @EnableJpaRepositories(
-        basePackages = "com.wolox.prueba.infrastructure.adaptador.jpa",
+        basePackages = "com.wolox.prueba.infrastructure.adapter.jpa",
         entityManagerFactoryRef = "entityManager",
         transactionManagerRef = "transactionManager"
 )
@@ -41,10 +41,10 @@ public class PruebaConfig {
 
     @Bean
     @Primary
-    public LocalContainerEntityManagerFactoryBean healthmanagerEntityManager() {
+    public LocalContainerEntityManagerFactoryBean entityManager() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean
                 = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setPersistenceUnitName("healthmanagerEntityManager");
+        entityManagerFactoryBean.setPersistenceUnitName("entityManager");
         entityManagerFactoryBean.setDataSource(datasource());
         entityManagerFactoryBean.setPackagesToScan("com.wolox.prueba.infrastructure.adapter.entity");
         HibernateJpaVendorAdapter vendorAdapter
@@ -63,7 +63,7 @@ public class PruebaConfig {
         JpaTransactionManager transactionManager
                 = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(
-                healthmanagerEntityManager().getObject());
+                entityManager().getObject());
         return transactionManager;
     }
 

@@ -5,15 +5,18 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDto {
 
     private Long id;
     private String name;
     private String username;
     private String email;
-    private AddressDto addressDto;
+    private AddressDto address;
+    private String phone;
+    private String website;
+    private CompanyDto company;
 }

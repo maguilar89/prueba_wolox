@@ -5,11 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity(name = "user")
+@Entity(name = "public.user")
 @Setter
 @Getter
 @AllArgsConstructor
@@ -17,7 +15,6 @@ import javax.persistence.Id;
 public class UserEntity {
 
     @Id
-    @Column(name = "id")
     private Long id;
     @Column(name = "name")
     private String name;
@@ -37,4 +34,14 @@ public class UserEntity {
     private String lat;
     @Column(name = "lng")
     private String lng;
+    @Column(name = "phone")
+    private String phone;
+    @Column(name = "website")
+    private String website;
+    @Column(name = "name_company")
+    private String name_company;
+    @Column(name = "catch_phrase")
+    private String catchPhrase;
+    @Column(name = "bs")
+    private String bs;
 }
