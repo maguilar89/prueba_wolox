@@ -15,19 +15,19 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ExtraService {
 
-    private final HttpClientBuilder httpClientBuilder;
-    private static final String URL_SERVICES = "https://jsonplaceholder.typicode.com/users";
-    private final MappingJackson2HttpMessageConverter springMvcJacksonConverter;
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+    //private final HttpClientBuilder httpClientBuilder;
+    //private static final String URL_SERVICES = "https://jsonplaceholder.typicode.com/users";
+    //private final MappingJackson2HttpMessageConverter springMvcJacksonConverter;
+    //private final Logger logger = LoggerFactory.getLogger(getClass());
 
     public void getPosition() {
 
         try {
-            CloseableHttpClient closeableHttpClient = httpClientBuilder.build();
+            /*CloseableHttpClient closeableHttpClient = httpClientBuilder.build();
             RequestBuilder requestBuilder = RequestBuilder.get().addHeader("Accept", "application/json").setUri(URL_SERVICES);
             CloseableHttpResponse closeableHttpResponse = closeableHttpClient.execute(requestBuilder.build());
 
-            String result = EntityUtils.toString(closeableHttpResponse.getEntity());
+            String result = EntityUtils.toString(closeableHttpResponse.getEntity());*/
 
 
         } catch (Exception e) {

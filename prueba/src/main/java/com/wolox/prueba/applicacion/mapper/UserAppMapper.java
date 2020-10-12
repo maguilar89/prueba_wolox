@@ -8,11 +8,11 @@ import org.mapstruct.ReportingPolicy;
 import java.util.List;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
-public interface UserMapper {
+public interface UserAppMapper {
 
-    UserDto domineADto(User user);
+    UserDto domineToDto(User user);
 
-    User dtoADominio(UserDto userDto);
+    User dtoToDomine(UserDto userDto);
 
-    List<UserDto> domineADtoList(List<User> users);
+    List<UserDto> domineToDtoList(List<User> users);
 }
