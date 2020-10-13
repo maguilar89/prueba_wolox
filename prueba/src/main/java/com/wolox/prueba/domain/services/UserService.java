@@ -1,5 +1,7 @@
 package com.wolox.prueba.domain.services;
 
+import com.wolox.prueba.applicacion.dto.PhotoDto;
+import com.wolox.prueba.domain.model.Photo;
 import com.wolox.prueba.domain.model.User;
 import com.wolox.prueba.domain.port.UserRepositoryPort;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,10 @@ public class UserService {
 
     public List<User> listar(){
        return userRepositoryPort.listar();
+    }
+
+    public List<Photo> findByUserName(String userName){
+        return userRepositoryPort.findByUserName(userName);
     }
 
 

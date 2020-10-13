@@ -1,5 +1,6 @@
 package com.wolox.prueba.applicacion.port;
 
+import com.wolox.prueba.applicacion.dto.PhotoDto;
 import com.wolox.prueba.applicacion.dto.UserDto;
 
 import java.util.List;
@@ -11,4 +12,6 @@ public interface UserAppPort {
     void guardar(List<UserDto> userDto);
 
     List<UserDto> listar();
+
+    List<PhotoDto>  buscar(String userName);
 }

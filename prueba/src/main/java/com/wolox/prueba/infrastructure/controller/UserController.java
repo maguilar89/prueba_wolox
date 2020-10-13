@@ -1,16 +1,15 @@
 package com.wolox.prueba.infrastructure.controller;
 
+import com.wolox.prueba.applicacion.dto.PhotoDto;
 import com.wolox.prueba.applicacion.dto.UserDto;
 import com.wolox.prueba.applicacion.port.UserAppPort;
+import com.wolox.prueba.domain.model.Photo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,6 +30,11 @@ public class UserController {
     @GetMapping
     public ResponseEntity<List<UserDto>> listar() {
         return ResponseEntity.ok(userAppPort.listar());
+    }
+
+    @GetMapping("/{username}")
+    public ResponseEntity<List<PhotoDto>> buscar(@PathVariable String username) {
+        return ResponseEntity.ok(userAppPort.buscar(username));
     }
 
 }
