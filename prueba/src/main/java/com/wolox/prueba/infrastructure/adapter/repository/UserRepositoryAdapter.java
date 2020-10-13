@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Slf4j
 @Component
 public class UserRepositoryAdapter implements UserRepositoryPort {
@@ -28,5 +30,10 @@ public class UserRepositoryAdapter implements UserRepositoryPort {
     @Override
     public User findById(Long id) {
         return userMapper.entityToDomine(userJpaRepository.findById(id).get());
+    }
+
+    @Override
+    public List<User> listar() {
+        return userMapper.entityToDomineList(userJpaRepository.findAll());
     }
 }

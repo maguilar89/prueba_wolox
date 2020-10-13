@@ -13,19 +13,22 @@ public class UserService {
     @Autowired
     private UserRepositoryPort userRepositoryPort;
 
-    public UserService(UserRepositoryPort userRepositoryPort) {
+    /*public UserService(UserRepositoryPort userRepositoryPort) {
         this.userRepositoryPort = userRepositoryPort;
-    }
+    }*/
 
     public User save(User user) {
         return userRepositoryPort.save(user);
     }
 
     public void save(List<User> users) {
-
         for (User user : users) {
             userRepositoryPort.save(user);
         }
+    }
+
+    public List<User> listar(){
+       return userRepositoryPort.listar();
     }
 
 

@@ -9,4 +9,6 @@ public interface UserAppPort {
     UserDto guardar(UserDto userDto);
 
     void guardar(List<UserDto> userDto);
+
+    List<UserDto> listar();
 }

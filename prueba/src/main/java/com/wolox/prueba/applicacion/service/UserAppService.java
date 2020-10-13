@@ -27,4 +27,9 @@ public class UserAppService implements UserAppPort {
     public void guardar(List<UserDto> userDto) {
         userService.save(userAppMapper.dtoToDtoList(userDto));
     }
+
+    @Override
+    public List<UserDto> listar() {
+        return  userAppMapper.domineToDtoList(userService.listar());
+    }
 }
