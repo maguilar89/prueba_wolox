@@ -1,10 +1,7 @@
 package com.wolox.prueba.infrastructure.controller;
 
 import com.wolox.prueba.applicacion.dto.CommentDto;
-import com.wolox.prueba.applicacion.dto.PhotoDto;
-import com.wolox.prueba.applicacion.dto.UserDto;
 import com.wolox.prueba.applicacion.port.CommentAppPort;
-import com.wolox.prueba.applicacion.port.UserAppPort;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -36,9 +33,8 @@ public class CommentController {
         return ResponseEntity.ok(commentAppPort.listar());
     }
 
-    @GetMapping("/{username}")
-    public ResponseEntity<List<PhotoDto>> buscar(@PathVariable String username) {
-        return null;
-        //return ResponseEntity.ok(commentAppPort.buscar(username));
+    @GetMapping("/{name}")
+    public ResponseEntity<List<CommentDto>> buscar(@PathVariable String name) {
+        return ResponseEntity.ok(commentAppPort.buscar(name));
     }
 }

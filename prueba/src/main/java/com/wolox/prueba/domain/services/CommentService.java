@@ -27,5 +27,9 @@ public class CommentService {
         return commentRepositoryPort.listar();
     }
 
+    public List<Comment> listar(String name){
+        return commentRepositoryPort.listar(name);
+    }
+
 
 }

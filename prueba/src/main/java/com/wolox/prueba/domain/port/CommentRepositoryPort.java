@@ -11,4 +11,6 @@ public interface CommentRepositoryPort {
     Comment findById(Long id);
 
     List<Comment> listar();
+
+    List<Comment> listar(String name);
 }

@@ -33,4 +33,9 @@ public class CommentRepositoryAdapter implements CommentRepositoryPort {
     public List<Comment> listar() {
         return commentMapper.entityToDomineList(commentJpaRepository.findAll());
     }
+
+    @Override
+    public List<Comment> listar(String name) {
+        return commentMapper.entityToDomineList(commentJpaRepository.findByName(name));
+    }
 }

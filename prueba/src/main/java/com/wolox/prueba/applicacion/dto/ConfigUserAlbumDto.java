@@ -1,4 +1,4 @@
-package com.wolox.prueba.domain.model;
+package com.wolox.prueba.applicacion.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ConfigUserAlbum {
+public class ConfigUserAlbumDto {
 
     private Long userId;
     private Long albumId;

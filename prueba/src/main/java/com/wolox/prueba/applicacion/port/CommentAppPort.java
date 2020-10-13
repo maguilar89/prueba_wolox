@@ -12,4 +12,6 @@ public interface CommentAppPort {
 
     List<CommentDto> listar();
 
+    List<CommentDto> buscar(String name);
+
 }

@@ -31,4 +31,9 @@ public class CommentAppService implements CommentAppPort {
     public List<CommentDto> listar() {
         return commentAppMapper.domineToDtoList(commentService.listar());
     }
+
+    @Override
+    public List<CommentDto> buscar(String name){
+        return commentAppMapper.domineToDtoList(commentService.listar(name));
+    }
 }
