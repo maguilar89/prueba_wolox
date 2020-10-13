@@ -1,6 +1,5 @@
 package com.wolox.prueba.domain.port;
 
-import com.wolox.prueba.applicacion.dto.PhotoDto;
 import com.wolox.prueba.domain.model.Photo;
 import com.wolox.prueba.domain.model.User;
 
