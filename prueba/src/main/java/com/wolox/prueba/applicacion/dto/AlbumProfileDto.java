@@ -9,11 +9,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ConfigUserAlbumDto {
+public class AlbumProfileDto {
 
+    private Long id;
     private Long userId;
-    private Long albumId;
-    private Boolean read;
-    private Boolean update;
-    private Boolean delete;
+    private String title;
+    private ConfigUserAlbumDto configUserAlbum;
 }

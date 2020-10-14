@@ -55,3 +55,13 @@ CONSTRAINT "user_pk" PRIMARY KEY ("id")
 )
 WITH (OIDS=FALSE);
 ALTER TABLE "public"."user" OWNER TO "postgres";
+
+
+CREATE TABLE "public"."config_user_album" (
+"album_id" int4,
+"user_id" int4,
+"read" bool DEFAULT false,
+"update" bool DEFAULT false,
+"delete" bool DEFAULT false,
+CONSTRAINT "config_user_album_pk" PRIMARY KEY ("album_id","user_id")
+)WITH (OIDS=FALSE);

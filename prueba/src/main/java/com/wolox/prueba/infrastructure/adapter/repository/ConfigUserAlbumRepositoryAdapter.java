@@ -2,6 +2,7 @@ package com.wolox.prueba.infrastructure.adapter.repository;
 
 import com.wolox.prueba.domain.model.ConfigUserAlbum;
 import com.wolox.prueba.domain.port.ConfigUserAlbumRepositoryPort;
+import com.wolox.prueba.infrastructure.adapter.entity.ConfigUserAlbumEntity;
 import com.wolox.prueba.infrastructure.adapter.jpa.ConfigUserAlbumJpaRepository;
 import com.wolox.prueba.infrastructure.adapter.papper.ConfigUserAlbumMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +22,11 @@ public class ConfigUserAlbumRepositoryAdapter implements ConfigUserAlbumReposito
 
     @Override
     public ConfigUserAlbum save(ConfigUserAlbum configUserAlbum) {
-        return configUserAlbumMapper.entityToDomine(configUserAlbumJpaRepository.save(configUserAlbumMapper.domineToEntity(configUserAlbum)));
+        ConfigUserAlbumEntity configUserAlbumEntity = configUserAlbumMapper.domineToEntity(configUserAlbum);
+        configUserAlbumEntity = configUserAlbumJpaRepository.save(configUserAlbumEntity);
+        configUserAlbum = configUserAlbumMapper.entityToDomine(configUserAlbumEntity);
+
+        return configUserAlbum;
     }
 
     @Override

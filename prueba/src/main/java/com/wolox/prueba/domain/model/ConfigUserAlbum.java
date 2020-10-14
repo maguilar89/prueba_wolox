@@ -15,7 +15,7 @@ public class ConfigUserAlbum implements Serializable {
 
     private Long userId;
     private Long albumId;
-    private Boolean select;
+    private Boolean read;
     private Boolean update;
     private Boolean delete;
 }

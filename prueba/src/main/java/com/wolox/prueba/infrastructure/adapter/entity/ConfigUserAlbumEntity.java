@@ -23,8 +23,8 @@ public class ConfigUserAlbumEntity implements Serializable {
     @Id
     @Column(name = "user_id")
     private Long userId;
-    @Column(name = "select")
-    private Boolean select;
+    @Column(name = "read")
+    private Boolean read;
     @Column(name = "update")
     private Boolean update;
     @Column(name = "delete")

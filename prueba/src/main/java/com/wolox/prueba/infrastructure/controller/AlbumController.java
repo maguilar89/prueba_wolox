@@ -1,6 +1,7 @@
 package com.wolox.prueba.infrastructure.controller;
 
 import com.wolox.prueba.applicacion.dto.AlbumDto;
+import com.wolox.prueba.applicacion.dto.AlbumProfileDto;
 import com.wolox.prueba.applicacion.port.AlbumAppPort;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiResponse;
@@ -31,7 +32,7 @@ public class AlbumController {
     }
 
     @PostMapping
-    public ResponseEntity<AlbumDto> guardar(@RequestBody AlbumDto albumDto) {
+    public ResponseEntity<AlbumProfileDto> guardar(@RequestBody AlbumProfileDto albumDto) {
         return ResponseEntity.ok(albumAppPort.guardar(albumDto));
     }
 

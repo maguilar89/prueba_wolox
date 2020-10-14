@@ -1,7 +1,9 @@
 package com.wolox.prueba.applicacion.service;
 
 import com.wolox.prueba.applicacion.dto.AlbumDto;
+import com.wolox.prueba.applicacion.dto.AlbumProfileDto;
 import com.wolox.prueba.applicacion.mapper.AlbumAppMapper;
+import com.wolox.prueba.applicacion.mapper.AlbumProfileAppMapper;
 import com.wolox.prueba.applicacion.port.AlbumAppPort;
 import com.wolox.prueba.domain.services.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +18,12 @@ public class AlbumAppService implements AlbumAppPort {
     private AlbumService albumService;
     @Autowired
     private AlbumAppMapper albumAppMapper;
-
+    @Autowired
+    private AlbumProfileAppMapper albumProfileAppMapper;
 
     @Override
-    public AlbumDto guardar(AlbumDto albumDto) {
-        return albumAppMapper.dominioADto(albumService.save(albumAppMapper.dtoADominio(albumDto)));
+    public AlbumProfileDto guardar(AlbumProfileDto albumProfileDto) {
+        return albumProfileAppMapper.dominioADto(albumService.save(albumProfileAppMapper.dtoADominio(albumProfileDto)));
     }
 
     @Override
@@ -32,4 +35,7 @@ public class AlbumAppService implements AlbumAppPort {
     public List<AlbumDto> listar() {
         return albumAppMapper.domineToDtoList(albumService.listar());
     }
+
+
+
 }
